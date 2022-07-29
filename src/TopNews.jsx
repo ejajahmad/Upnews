@@ -9,10 +9,13 @@ export default function TopNews() {
   const [news, setNews] = useState([]);
   const cardRef = useRef();
 
+  const toSentenceCase = (str) => {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  };
+
   const getTopNews = async () => {
     const response = await fetch(`https://inshorts.deta.dev/news?category=${id ? id : "all"}`);
     const data = await response.json();
-    console.log(data);
     setNews(data.data);
     // const news = data.data.children.map((child) => child.data);
     // setNews(data.data.children.map((child) => child.data));
@@ -21,6 +24,8 @@ export default function TopNews() {
   useEffect(() => {
     setNews([]);
     getTopNews();
+
+    if (id) document.title = `Upnews  ${toSentenceCase(id)} | Find the best ${id} news on Upnews`;
   }, [id]);
 
   const handleNextCard = () => {
