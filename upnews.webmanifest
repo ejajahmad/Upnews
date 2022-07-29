@@ -1,0 +1,21 @@
+{
+  "name": "Upnews - Explore the world's news",
+  "short_name": "Upnews",
+  "description": "Upnews is a news aggregator that brings you the latest news from around the world.",
+  "icons": [
+    {
+      "src": "./src/assets/upnews32.jpg",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "./src/assets/upnews512.jpg",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "./index.html",
+  "display": "fullscreen",
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff"
+}
