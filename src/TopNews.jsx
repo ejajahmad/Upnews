@@ -10,7 +10,7 @@ export default function TopNews() {
   const cardRef = useRef();
 
   const getTopNews = async () => {
-    const response = await fetch(`https://inshorts.deta.dev/news?category=${id === "" ? "all" : id}`);
+    const response = await fetch(`https://inshorts.deta.dev/news?category=${id ? id : "all"}`);
     const data = await response.json();
     console.log(data);
     setNews(data.data);
@@ -42,7 +42,7 @@ export default function TopNews() {
   return (
     <div className="flex flex-col gap-4 p-5">
       {/* create a floating button */}
-      <div className="fixed bottom-0 right-0 mr-4 mb-4 z-50">
+      <div className="fixed bottom-5 right-0 mr-4 mb-10 z-50">
         <button className="bg-white  p-1 rounded shadow-lg border-2 border-black" onClick={handleNextCard}>
           <BiSkipNext size={30} />
         </button>
